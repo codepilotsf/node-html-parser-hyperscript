@@ -1,3 +1,5 @@
+### Forked only to change regex that parses attributes to allow the `_` attribute key used by Hyperscript. Literally ONE character changed.
+
 # Fast HTML Parser [![NPM version](https://badge.fury.io/js/node-html-parser.png)](http://badge.fury.io/js/node-html-parser) [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ftaoqf%2Fnode-html-parser%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/taoqf/node-html-parser/goto?ref=main)
 
 Fast HTML Parser is a _very fast_ HTML parser. Which will generate a simplified
