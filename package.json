@@ -1,5 +1,5 @@
 {
-	"name": "node-html-parser",
+	"name": "node-html-parser-hyperscript",
 	"version": "5.3.3",
 	"description": "A very fast HTML parser, generating a simplified DOM, with basic element query support.",
 	"main": "dist/index.js",
@@ -46,7 +46,8 @@
 	"author": "Xiaoyi Shi <ashi009@gmail.com>",
 	"contributors": [
 		"taoqf <tao_qiufeng@126.com>",
-		"Ron S. <ron@nonara.com>"
+		"Ron S. <ron@nonara.com>",
+		"Sean Schertell <sean@codepilot.com>"
 	],
 	"license": "MIT",
 	"publishConfig": {
@@ -54,7 +55,8 @@
 	},
 	"dependencies": {
 		"css-select": "^4.2.1",
-		"he": "1.2.0"
+		"he": "1.2.0",
+		"yarn": "^1.22.19"
 	},
 	"devDependencies": {
 		"@types/entities": "latest",
