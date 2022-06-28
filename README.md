@@ -1,4 +1,4 @@
-### Forked only to change regex that parses attributes to allow the `_` attribute key used by Hyperscript. Literally ONE character changed.
+### Forked only to changes regex that parses attributes to allow the `_` attribute key used by Hyperscript. Also allowing for attribute values with line breaks.
 
 # Fast HTML Parser [![NPM version](https://badge.fury.io/js/node-html-parser.png)](http://badge.fury.io/js/node-html-parser) [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ftaoqf%2Fnode-html-parser%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/taoqf/node-html-parser/goto?ref=main)
 
@@ -6,12 +6,11 @@ Fast HTML Parser is a _very fast_ HTML parser. Which will generate a simplified
 DOM tree, with element query support.
 
 Per the design, it intends to parse massive HTML files in lowest price, thus the
-performance is the top priority.  For this reason, some malformatted HTML may not
+performance is the top priority. For this reason, some malformatted HTML may not
 be able to parse correctly, but most usual errors are covered (eg. HTML4 style
 no closing `<li>`, `<td>` etc).
 
 ## Install
-
 
 ```shell
 npm install --save node-html-parser
@@ -62,7 +61,7 @@ console.log(root.querySelector('#list'));
 console.log(root.toString());
 // <ul id="list"><li>Hello World</li></ul>
 root.set_content('<li>Hello World</li>');
-root.toString();	// <li>Hello World</li>
+root.toString(); // <li>Hello World</li>
 ```
 
 ```js
@@ -77,21 +76,21 @@ var root = HTMLParser.parse('<ul id="list"><li>Hello World</li></ul>');
 
 Parse the data provided, and return the root of the generated DOM.
 
-- **data**, data to parse
-- **options**, parse options
+-   **data**, data to parse
+-   **options**, parse options
 
-  ```js
-  {
-    lowerCaseTagName: false,  // convert tag name to lower case (hurts performance heavily)
-    comment: false,            // retrieve comments (hurts performance slightly)
-    blockTextElements: {
-      script: true,	// keep text content when parsing
-      noscript: true,	// keep text content when parsing
-      style: true,		// keep text content when parsing
-      pre: true			// keep text content when parsing
+    ```js
+    {
+      lowerCaseTagName: false,  // convert tag name to lower case (hurts performance heavily)
+      comment: false,            // retrieve comments (hurts performance slightly)
+      blockTextElements: {
+        script: true,	// keep text content when parsing
+        noscript: true,	// keep text content when parsing
+        style: true,		// keep text content when parsing
+        pre: true			// keep text content when parsing
+      }
     }
-  }
-  ```
+    ```
 
 ### valid(data[, options])
 
@@ -121,7 +120,7 @@ Query CSS Selector to find matching node.
 
 Get all elements with the specified tagName.
 
-Note: Use * for all elements.
+Note: Use \* for all elements.
 
 ### HTMLElement#closest(selector)
 
