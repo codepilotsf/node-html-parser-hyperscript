@@ -153,12 +153,12 @@ export default class HTMLElement extends Node {
 	 * @returns {string} quoted value
 	 */
 
-	// private quoteAttribute(attr: string) {
-	// 	if (attr == null) {
-	// 		return 'null';
-	// 	}
-	// 	return JSON.stringify(attr.replace(/"/g, '&quot;')).replace(/\\n/g, '\n');
-	// }
+	private quoteAttribute(attr: string) {
+		if (attr == null) {
+			return 'null';
+		}
+		return JSON.stringify(attr.replace(/"/g, '&quot;')).replace(/\\n/g, '\n');
+	}
 
 	/**
 	 * Creates an instance of HTMLElement.
@@ -760,8 +760,8 @@ export default class HTMLElement extends Node {
 		// Update rawString
 		this.rawAttrs = Object.keys(attrs)
 			.map((name) => {
-				// const val = this.quoteAttribute(attrs[name]);
-				const val = attrs[name];
+				const val = this.quoteAttribute(attrs[name]);
+				// const val = attrs[name];
 				if (val === 'null' || val === '""') return name;
 				return `${name}=${val}`;
 			})
@@ -790,8 +790,8 @@ export default class HTMLElement extends Node {
 			.map((name) => {
 				const val = attributes[name];
 				if (val === 'null' || val === '""') return name;
-				// return `${name}=${this.quoteAttribute(String(val))}`;
-				return `${name}=${String(val)}`;
+				return `${name}=${this.quoteAttribute(String(val))}`;
+				// return `${name}=${String(val)}`;
 			})
 			.join(' ');
 		return this;
