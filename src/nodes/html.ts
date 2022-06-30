@@ -760,7 +760,8 @@ export default class HTMLElement extends Node {
 		// Update rawString
 		this.rawAttrs = Object.keys(attrs)
 			.map((name) => {
-				const val = this.quoteAttribute(attrs[name]);
+				// const val = this.quoteAttribute(attrs[name]);
+				const val = attrs[name];
 				if (val === 'null' || val === '""') return name;
 				return `${name}=${val}`;
 			})
